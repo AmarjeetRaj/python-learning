@@ -1,4 +1,3 @@
-#https://itunes.apple.com/search?entity=song&limit=1&term=jack+johnson+better+together
 import requests
 import sys
 import json

@@ -1,10 +1,12 @@
-name = input("What's your name? ")
+names = []
 
 # Append the name to the file
-with open("names.txt","a") as file:
-    file.write(name+ "\n")
+with open("names.txt") as file:
+    #lines = file.readlines()
+    print(file)
+    for line in file:
+        names.append(line.rstrip())
 
 # Read and print all names from the file
-with open("names.txt","r") as file:
-    for line in file:
-        print("Hello,", line.rstrip())
+for name in sorted(names):
+    print("Hello,", name.rstrip())

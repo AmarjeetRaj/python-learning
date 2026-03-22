@@ -8,5 +8,5 @@ with open("names.txt") as file:
         names.append(line.rstrip())
 
 # Read and print all names from the file
-for name in sorted(names):
+for name in sorted(names, reverse=True):
     print("Hello,", name.rstrip())

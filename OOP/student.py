@@ -1,5 +1,5 @@
 class Student:
-     def __init__(self, name, house, patronus):
+     def __init__(self, name="Harry", house="Gryffindor", patronus="Stag"):
           self.name = name
           self.house = house
           self.patronus = patronus
@@ -37,19 +37,22 @@ class Student:
           if house not in ["Gryffindor","Hufflepuff","Ravenclaw","Slytherin"]:
                raise ValueError("Invalid house")
           self._house = house     
+     
+     @classmethod
+     def get(cls):
+          name = input("Name: ")
+          house = input("House: ")
+          patronus = input("Patronus: ")
+          return cls(name, house, patronus)
 
 def main():
-    student = get_student()
+#     student = get_student()
 #     student.house = "Number Four, Privet Drive"
-    print(student)
+    student = Student()
+    print(Student.get())
     print("Expecto Patronum!")
     print(student.charm())
 
-def get_student():
-     name = input("Name: ")
-     house = input("House: ")
-     patronus = input("Patronus: ")
-     return Student(name, house, patronus)
 
 if __name__ == "__main__":
      main()
